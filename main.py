@@ -1,4 +1,5 @@
 import random
+from string import Template
 
 
 class QuizGame(object):
@@ -16,7 +17,8 @@ class QuizGame(object):
     def _guess_number(self):
         guess = int(input("Your guess: "))
         if guess == self._random_number:
-            print("You guessed correctly!")
+            tm = Template("You guessed correctly!\n The number was $number!").substitute({"number": self._random_number})
+            print(tm)
         else:
             print("You guessed incorrectly!")
             self._guess_number()
