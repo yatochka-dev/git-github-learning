@@ -4,9 +4,9 @@ import random
 class QuizGame(object):
 
     def __init__(
-            self
+            self, random_number: int
     ):
-        self._random_number = random.randint(1, 10)
+        self._random_number = random_number
 
     def start_game(self):
         print("Welcome to the quiz game!")
@@ -23,7 +23,7 @@ class QuizGame(object):
 
 
 def main():
-    game = QuizGame()
+    game = QuizGame(random.randint(1, 10))
     game.start_game()
 
 
