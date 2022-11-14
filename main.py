@@ -1,16 +1,31 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import random
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class QuizGame(object):
+
+    def __init__(
+            self
+    ):
+        self._random_number = random.randint(1, 10)
+
+    def start_game(self):
+        print("Welcome to the quiz game!")
+        print("Guess a number between 1 and 10")
+        self._guess_number()
+
+    def _guess_number(self):
+        guess = int(input("Your guess: "))
+        if guess == self._random_number:
+            print("You guessed correctly!")
+        else:
+            print("You guessed incorrectly!")
+            self._guess_number()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    game = QuizGame()
+    game.start_game()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+if __name__ == "__main__":
+    main()
