@@ -72,5 +72,7 @@ def main():
     quiz.start_game()
 
 
+# master comment has been added
+
 if __name__ == '__main__':
     main()
